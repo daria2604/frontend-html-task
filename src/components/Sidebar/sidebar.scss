@@ -1,0 +1,167 @@
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  max-width: 100px;
+  height: 100vh;
+  padding: 18px;
+
+  border-radius: 10px;
+  background-color: #0b0b0b;
+
+  transition: all .3s linear;
+
+  &.opened  {
+    max-width: 320px;
+
+    transition: all .3s linear;
+  }
+
+  &.opened & {
+    &__button {
+      right: -15px;
+
+      background-color: #242424;
+    }
+
+    &__title {
+      transition: all .3s .1s ease-in;
+    }
+
+    &__menu {
+      &-link{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 10px;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    &-pic {
+      display: block;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+
+    opacity: 1;
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+
+      transition: all .3s ease-in;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: auto;
+    right: -50px;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 100%;
+    border: none;
+
+    background-color: #0b0b0b;
+
+    cursor: pointer;
+
+    &-icon {
+      width: 10px;
+      height: 15px;
+      vertical-align: middle;
+
+      color: #fff;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    margin-top: 25px;
+    
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      flex-grow: 1;
+
+      padding: 0;
+      margin: 0;
+
+      list-style: none;
+
+      &--bottom {
+        justify-content: flex-end;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+
+      display: block;
+
+      color: #fff;
+
+      &:focus, :focus-visible {
+        outline-offset: 15px;
+      }
+    }
+    
+
+    &-item {
+      text-align: center;
+
+      display: block;
+      padding: 15px 13px;
+
+      border-radius: 16px;
+      
+      cursor: pointer;
+
+      &:hover {
+        background-color: #1d1b1b;
+
+        transition: all .3s ease-in;
+      }
+
+      &:active {
+        background-color: rgba($color:#1d1b1b, $alpha: .75);
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      display: block;
+      transition: all .3s ease;
+
+      &--hidden {
+        display: none;
+        transition: all .3s linear;
+      }
+    }
+  }
+}
